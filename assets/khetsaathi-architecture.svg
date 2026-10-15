@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="100%" height="auto" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="gradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="gradAi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="gradDb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="960" height="420" rx="16" fill="#0B132B" stroke="#1E293B" stroke-width="1.5" />
+  
+  <!-- Subtle Grid lines -->
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+    <line x1="240" y1="30" x2="240" y2="380" stroke-dasharray="4,4" />
+    <line x1="480" y1="30" x2="480" y2="380" stroke-dasharray="4,4" />
+    <line x1="720" y1="30" x2="720" y2="380" stroke-dasharray="4,4" />
+  </g>
+
+  <!-- COLUMN 1: Client Layer -->
+  <rect x="25" y="55" width="200" height="305" rx="12" fill="#1C2541" stroke="#3A506B" stroke-width="1.5" filter="url(#cardShadow)" />
+  <rect x="40" y="70" width="170" height="32" rx="6" fill="rgba(79, 70, 229, 0.2)" />
+  <text x="125" y="91" fill="#A5B4FC" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="0.5">1. CLIENT &amp; UI LAYER</text>
+  
+  <rect x="40" y="115" width="170" height="60" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="125" y="138" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">React.js Web App</text>
+  <text x="125" y="156" fill="#94A3B8" font-size="11" text-anchor="middle">Responsive mobile UI</text>
+
+  <rect x="40" y="185" width="170" height="60" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="125" y="208" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">Hindi Voice Interface</text>
+  <text x="125" y="226" fill="#94A3B8" font-size="11" text-anchor="middle">Web Speech STT / TTS</text>
+
+  <rect x="40" y="255" width="170" height="60" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="125" y="278" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">Leaf Camera Capture</text>
+  <text x="125" y="296" fill="#94A3B8" font-size="11" text-anchor="middle">Real-time image upload</text>
+
+  <!-- Connectors 1 to 2 -->
+  <path d="M225 207 L265 207" stroke="#4F46E5" stroke-width="2.5" stroke-dasharray="4,3" />
+  <polygon points="263,203 271,207 263,211" fill="#4F46E5" />
+
+  <!-- COLUMN 2: API Gateway / Backend Layer -->
+  <rect x="265" y="55" width="200" height="305" rx="12" fill="#1C2541" stroke="#3A506B" stroke-width="1.5" filter="url(#cardShadow)" />
+  <rect x="280" y="70" width="170" height="32" rx="6" fill="rgba(59, 130, 246, 0.2)" />
+  <text x="365" y="91" fill="#93C5FD" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="0.5">2. FASTAPI BACKEND</text>
+
+  <rect x="280" y="115" width="170" height="68" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="365" y="137" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">RESTful Endpoints</text>
+  <text x="365" y="154" fill="#94A3B8" font-size="11" text-anchor="middle">Async request pipeline</text>
+  <text x="365" y="170" fill="#60A5FA" font-size="10" text-anchor="middle">/predict • /mandi • /chat</text>
+
+  <rect x="280" y="193" width="170" height="60" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="365" y="215" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">Image Preprocessing</text>
+  <text x="365" y="233" fill="#94A3B8" font-size="11" text-anchor="middle">Resize 224x224 &amp; normalize</text>
+
+  <rect x="280" y="263" width="170" height="60" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="365" y="285" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">Mandi Live Price Engine</text>
+  <text x="365" y="303" fill="#94A3B8" font-size="11" text-anchor="middle">Govt Agmarknet API scraper</text>
+
+  <!-- Connectors 2 to 3 -->
+  <path d="M465 207 L505 207" stroke="#10B981" stroke-width="2.5" stroke-dasharray="4,3" />
+  <polygon points="503,203 511,207 503,211" fill="#10B981" />
+
+  <!-- COLUMN 3: AI & Satellite Engines -->
+  <rect x="505" y="55" width="200" height="305" rx="12" fill="#1C2541" stroke="#3A506B" stroke-width="1.5" filter="url(#cardShadow)" />
+  <rect x="520" y="70" width="170" height="32" rx="6" fill="rgba(16, 185, 129, 0.2)" />
+  <text x="605" y="91" fill="#6EE7B7" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="0.5">3. AI &amp; SATELLITE ENGINE</text>
+
+  <rect x="520" y="115" width="170" height="68" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="605" y="137" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">TensorFlow CNN</text>
+  <text x="605" y="154" fill="#94A3B8" font-size="11" text-anchor="middle">Plant disease classification</text>
+  <text x="605" y="170" fill="#34D399" font-size="10" text-anchor="middle">15+ Indian crop pathogens</text>
+
+  <rect x="520" y="193" width="170" height="60" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="605" y="215" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">Gemini 1.5 Flash</text>
+  <text x="605" y="233" fill="#94A3B8" font-size="11" text-anchor="middle">Vernacular advisory system</text>
+
+  <rect x="520" y="263" width="170" height="60" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="605" y="285" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">Sentinel-2 NDVI Satellite</text>
+  <text x="605" y="303" fill="#94A3B8" font-size="11" text-anchor="middle">Google Earth Engine remote</text>
+
+  <!-- Connectors 3 to 4 -->
+  <path d="M705 207 L745 207" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="4,3" />
+  <polygon points="743,203 751,207 743,211" fill="#F59E0B" />
+
+  <!-- COLUMN 4: Data & Cloud Layer -->
+  <rect x="745" y="55" width="190" height="305" rx="12" fill="#1C2541" stroke="#3A506B" stroke-width="1.5" filter="url(#cardShadow)" />
+  <rect x="760" y="70" width="160" height="32" rx="6" fill="rgba(245, 158, 11, 0.2)" />
+  <text x="840" y="91" fill="#FCD34D" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="0.5">4. MONGODB ATLAS</text>
+
+  <rect x="760" y="115" width="160" height="135" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="840" y="136" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">7 Collections Schema</text>
+  <text x="840" y="152" fill="#FCD34D" font-size="11" font-weight="600" text-anchor="middle">B2B + Farmer Architecture</text>
+  <text x="840" y="172" fill="#94A3B8" font-size="10" text-anchor="middle">• Users &amp; Profiles</text>
+  <text x="840" y="188" fill="#94A3B8" font-size="10" text-anchor="middle">• DiseaseDiagnoses</text>
+  <text x="840" y="204" fill="#94A3B8" font-size="10" text-anchor="middle">• MandiPriceRecords</text>
+  <text x="840" y="220" fill="#94A3B8" font-size="10" text-anchor="middle">• SatelliteNDVICache</text>
+  <text x="840" y="236" fill="#94A3B8" font-size="10" text-anchor="middle">• B2BMarketplace</text>
+
+  <rect x="760" y="260" width="160" height="63" rx="8" fill="#0B132B" stroke="#3A506B" />
+  <text x="840" y="283" fill="#F8FAFC" font-size="13" font-weight="600" text-anchor="middle">Cloud Storage</text>
+  <text x="840" y="302" fill="#94A3B8" font-size="11" text-anchor="middle">Leaf imagery &amp; telemetry</text>
+
+  <!-- Bottom Key / Legend -->
+  <text x="480" y="392" fill="#94A3B8" font-size="11.5" text-anchor="middle" letter-spacing="0.3">KhetSaathi End-to-End System Architecture: React UI ➔ FastAPI ➔ TensorFlow CNN &amp; Gemini Flash ➔ MongoDB Atlas</text>
+</svg>

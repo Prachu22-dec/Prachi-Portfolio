@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="auto" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="cbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" rx="14" fill="url(#cbBg)" />
+
+  <!-- App Header -->
+  <rect x="30" y="25" width="540" height="42" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <circle cx="52" cy="46" r="5" fill="#EF4444" />
+  <circle cx="68" cy="46" r="5" fill="#F59E0B" />
+  <circle cx="84" cy="46" r="5" fill="#10B981" />
+  <rect x="110" y="36" width="240" height="20" rx="4" fill="#0F172A" />
+  <text x="120" y="50" fill="#94A3B8" font-size="11">cyberbrief.ai/inspector</text>
+  <rect x="430" y="35" width="125" height="22" rx="4" fill="#6366F1" />
+  <text x="492" y="50" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle">⚡ Claude 3.5 Sonnet</text>
+
+  <!-- Left: Raw Security Log Input -->
+  <rect x="30" y="85" width="260" height="245" rx="10" fill="#0F172A" stroke="#334155" />
+  <text x="45" y="110" fill="#EF4444" font-size="11" font-weight="700">RAW SYSLOG / FIREWALL LOGS</text>
+  <rect x="45" y="125" width="230" height="185" rx="6" fill="#020617" stroke="#1E293B" />
+  <text x="55" y="145" fill="#F43F5E" font-size="10" font-family="monospace">WARN: 192.168.1.104 port 22</text>
+  <text x="55" y="162" fill="#F43F5E" font-size="10" font-family="monospace">SSH brute force attempt (50+)</text>
+  <text x="55" y="179" fill="#94A3B8" font-size="10" font-family="monospace">AuthFail user='root' src=45.33.*</text>
+  <text x="55" y="196" fill="#94A3B8" font-size="10" font-family="monospace">iptables: DROP INPUT proto=TCP</text>
+  <text x="55" y="213" fill="#64748B" font-size="10" font-family="monospace">TLS handshake reset: 0x8004</text>
+  <text x="55" y="235" fill="#A5B4FC" font-size="10" font-family="monospace">PII Sanitized: [IP Masked]</text>
+  <text x="55" y="270" fill="#6366F1" font-size="10" font-weight="600">[Analyzing with Claude API...]</text>
+
+  <!-- Right: Plain-English Threat Severity Card -->
+  <rect x="310" y="85" width="260" height="245" rx="10" fill="#1E293B" stroke="#334155" />
+  <text x="330" y="112" fill="#818CF8" font-size="13" font-weight="700">🛡️ Plain-English Triage Summary</text>
+
+  <rect x="330" y="128" width="220" height="60" rx="8" fill="#450A0A" stroke="#DC2626" />
+  <text x="345" y="150" fill="#FECACA" font-size="12" font-weight="700">HIGH SEVERITY ALERT</text>
+  <text x="345" y="168" fill="#FCA5A5" font-size="10">Automated credential stuffing detected.</text>
+  <text x="345" y="180" fill="#FCA5A5" font-size="10">Source attempted 52 root logins.</text>
+
+  <rect x="330" y="200" width="220" height="110" rx="8" fill="#0F172A" />
+  <text x="345" y="222" fill="#F8FAFC" font-size="11" font-weight="600">Recommended Next Steps:</text>
+  <text x="345" y="242" fill="#94A3B8" font-size="10">1. Enforce fail2ban jail rule</text>
+  <text x="345" y="260" fill="#94A3B8" font-size="10">2. Disable root SSH password auth</text>
+  <text x="345" y="278" fill="#94A3B8" font-size="10">3. Verified zero firewall leak</text>
+  <text x="345" y="298" fill="#34D399" font-size="10" font-weight="600">Response time: 1.4s via Claude API</text>
+</svg>
