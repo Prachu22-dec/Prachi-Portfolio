@@ -133,12 +133,11 @@ function initContactForm() {
     feedbackEl.className = 'form-feedback';
     feedbackEl.style.display = 'none';
 
-    // Target Formspree Endpoint or Email Endpoint
-    // TODO: User can replace with their custom Formspree ID: https://formspree.io/f/YOUR_ID
-    const formspreeEndpoint = contactForm.getAttribute('action') || 'https://formspree.io/f/mqkrqjwv';
+    // FormSubmit AJAX Endpoint targeting Prachi's email directly
+    const endpoint = 'https://formsubmit.co/ajax/prachibarpete640@gmail.com';
 
     try {
-      const response = await fetch(formspreeEndpoint, {
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -147,23 +146,28 @@ function initContactForm() {
         body: JSON.stringify({
           name: name,
           email: email,
-          subject: subject,
+          _subject: subject,
           message: message,
-          _replyto: email
+          _template: 'table',
+          _captcha: 'false'
         })
       });
 
-      if (response.ok) {
-        showFeedback('Thank you! Your message has been sent successfully. I will get back to you within 24 hours.', 'success');
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && (data.success === 'true' || data.success === true)) {
+        showFeedback('Thank you! Your message has been sent successfully to Prachi. I will get back to you within 24 hours.', 'success');
+        contactForm.reset();
+      } else if (data.message && data.message.toLowerCase().includes('activation')) {
+        showFeedback('Message submitted! Please note: Form activation is pending. Check prachibarpete640@gmail.com to activate.', 'success');
         contactForm.reset();
       } else {
-        const data = await response.json().catch(() => ({}));
-        const errMessage = data?.errors?.map(err => err.message).join(', ') || 'Submission failed. Please email directly at prachibarpete640@gmail.com';
+        const errMessage = data?.message || 'Submission failed. Please click below to email directly at prachibarpete640@gmail.com';
         showFeedback(errMessage, 'error');
       }
     } catch (err) {
       // Network failure or offline -> provide graceful direct mailto trigger
-      showFeedback('Network error. Click below to open your email client directly.', 'error');
+      showFeedback('Network error. Opening your email app to send directly...', 'error');
       window.location.href = `mailto:prachibarpete640@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + message)}`;
     } finally {
       setButtonLoading(submitBtn, false);
