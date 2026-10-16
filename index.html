@@ -184,41 +184,23 @@
           </div>
         </div>
 
-        <!-- Real Photo Hero Visual (Enlarged with Ambient Glow & Badges) -->
+        <!-- Real Photo Hero Visual (100% Clear & Unobstructed with Ambient Glow) -->
         <div class="hero-visual">
           <div class="avatar-wrapper">
             <!-- Ambient Glow Aura -->
             <div class="avatar-glow-aura"></div>
 
-            <!-- Main Enlarged Photo Frame -->
+            <!-- Main Photo Frame - 100% Unobstructed Photo -->
             <div class="avatar-frame">
               <img src="assets/prachi-photo.webp" alt="Prachi Kisanlal Barpete - Software Engineer"
                 class="avatar-img" width="340" height="400" loading="eager">
             </div>
+          </div>
 
-            <!-- Floating Badge Top Left -->
-            <div class="hero-float-badge float-top-left">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div>
-                <span class="badge-sub">B.Tech CSE '27</span>
-                <strong class="badge-main">CGPA: 7.25</strong>
-              </div>
-            </div>
-
-            <!-- Floating Badge Bottom Right -->
-            <div class="hero-float-badge float-bottom-right">
-              <i class="fa-solid fa-trophy"></i>
-              <div>
-                <span class="badge-sub">Hackathon</span>
-                <strong class="badge-main">Rank 11</strong>
-              </div>
-            </div>
-
-            <!-- Bottom Status Badge -->
-            <div class="avatar-badge-card">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Trainee Software Engineer Ready</span>
-            </div>
+          <!-- Bottom Status Pill (Placed cleanly below the photo frame, zero overlap) -->
+          <div class="avatar-status-pill">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Trainee Software Engineer Ready</span>
           </div>
         </div>
       </div>
@@ -1097,18 +1079,20 @@
   <!-- External Script -->
   <script src="script.js"></script>
 
-  <!-- Floating Background Words Generator -->
+  <!-- Floating Background Words Generator (Strictly background, cleared away from photo zone) -->
   <script>
-    const words = ['Java', 'Python', 'SQL', 'React', 'JavaScript', 'MongoDB', 'Node.js', 'FastAPI', 'Git'];
+    const words = ['Java', 'Python', 'SQL', 'React', 'MongoDB', 'Node.js', 'FastAPI', 'Git'];
     const box = document.getElementById('bgWords');
     if (box) {
+      // Left side distribution (3% to 42%) and far right edge (94%), strictly avoiding the hero photo zone (50%-90%)
+      const leftPositions = [3, 10, 18, 26, 34, 42, 14, 94];
       words.forEach((w, i) => {
         const s = document.createElement('span');
         s.textContent = w;
-        s.style.left = (8 + (i * 10)) % 92 + '%';
-        s.style.animationDuration = (28 + (i % 5) * 6) + 's';
-        s.style.animationDelay = (-i * 4) + 's';
-        s.style.fontSize = (18 + (i % 4) * 4) + 'px';
+        s.style.left = (leftPositions[i % leftPositions.length]) + '%';
+        s.style.animationDuration = (26 + (i % 4) * 6) + 's';
+        s.style.animationDelay = (-i * 3.5) + 's';
+        s.style.fontSize = (16 + (i % 3) * 4) + 'px';
         box.appendChild(s);
       });
     }

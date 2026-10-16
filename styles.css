@@ -77,25 +77,34 @@
 .nav-link.active, .nav-links a.active { color: var(--accent) !important; border-color: var(--accent) !important; }
 .nav-links a.active::after { background: var(--accent) !important; }
 
-/* Floating Background Words */
-.bg-words { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+/* Floating Background Words - strictly background layer */
+.bg-words {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1 !important;
+}
 .bg-words span {
-  position: absolute; bottom: -40px;
+  position: absolute;
+  bottom: -40px;
   font-family: ui-monospace, Consolas, monospace;
   color: var(--accent);
-  opacity: 0.22;
-  font-size: 24px;
+  opacity: 0.12;
+  font-size: 20px;
   font-weight: 800;
-  text-shadow: 0 0 16px rgba(245, 158, 11, 0.55), 0 0 32px rgba(194, 65, 12, 0.35);
+  text-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
   letter-spacing: 0.5px;
   animation: floatUp linear infinite;
+  pointer-events: none;
+  user-select: none;
 }
 @keyframes floatUp {
   from { transform: translateY(0); }
   to   { transform: translateY(-115vh); }
 }
 @media (prefers-reduced-motion: reduce) { .bg-words { display: none; } }
-@media (max-width: 768px) { .bg-words span:nth-child(n+7) { display: none; } }
+@media (max-width: 768px) { .bg-words span:nth-child(n+5) { display: none; } }
 
 * {
   margin: 0;
@@ -516,13 +525,14 @@ section {
   color: var(--primary);
 }
 
-/* Hero Avatar Column & Expanded Frame */
+/* Hero Avatar Column & Clear Frame (100% Unobstructed Photo) */
 .hero-visual {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 10;
 }
 
 .avatar-wrapper {
@@ -530,6 +540,7 @@ section {
   width: 320px;
   max-width: 90vw;
   height: 400px;
+  z-index: 10;
 }
 
 .avatar-glow-aura {
@@ -556,7 +567,7 @@ section {
   box-shadow: 0 0 40px rgba(245, 158, 11, 0.3), 0 20px 45px rgba(0, 0, 0, 0.6);
   background: var(--bg-surface);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .avatar-img {
@@ -564,6 +575,7 @@ section {
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
+  display: block;
   transition: transform 0.35s ease;
 }
 
@@ -571,84 +583,25 @@ section {
   transform: scale(1.04);
 }
 
-/* Floating Micro Badges around Photo */
-.hero-float-badge {
-  position: absolute;
-  z-index: 3;
-  background: rgba(23, 18, 13, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(245, 158, 11, 0.5);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 16px rgba(245, 158, 11, 0.25);
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  animation: badgeFloat 3.5s ease-in-out infinite alternate;
-}
-
-[data-theme="light"] .hero-float-badge {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(245, 158, 11, 0.45);
-}
-
-.hero-float-badge.float-top-left {
-  top: -12px;
-  left: -24px;
-}
-
-.hero-float-badge.float-bottom-right {
-  bottom: 30px;
-  right: -24px;
-  animation-delay: -1.75s;
-}
-
-@keyframes badgeFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-7px); }
-}
-
-.hero-float-badge i {
-  font-size: 1.25rem;
-  color: var(--accent);
-}
-
-.hero-float-badge .badge-sub {
-  display: block;
-  font-size: 0.725rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.hero-float-badge .badge-main {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.avatar-badge-card {
-  position: absolute;
-  bottom: -14px;
-  left: 50%;
-  transform: translateX(-50%);
+/* Status Pill Placed Cleanly Underneath Photo (Zero Overlap) */
+.avatar-status-pill {
+  margin-top: 18px;
   background: var(--bg-surface);
   border: 1.5px solid rgba(245, 158, 11, 0.5);
-  padding: 8px 18px;
+  padding: 8px 20px;
   border-radius: var(--radius-full);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 15px rgba(245, 158, 11, 0.2);
-  display: flex;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 12px rgba(245, 158, 11, 0.2);
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  white-space: nowrap;
-  z-index: 4;
+  color: var(--text-primary);
+  z-index: 10;
+  position: relative;
 }
 
-.avatar-badge-card i {
+.avatar-status-pill i {
   color: var(--accent);
 }
 
