@@ -73,4 +73,4 @@
 | **Formspree Form ID** | `Optional` | Form is ready. To receive emails into your private inbox, register a free form at [formspree.io](https://formspree.io) and replace `https://formspree.io/f/mqkrqjwv` in `index.html` line 440 with your form endpoint. |
 | **KhetSaathi Live URL** | `TODO` | When public hosted demo is deployed (Vercel/Render), add the URL to the project button in `index.html`. |
 | **Green Quest Live URL** | `TODO` | Add your live Vercel/Render link to the Green Quest card in `index.html` when ready. |
-| **Verify Phone/Email** | `Verified` | Verified against `qtresume.pdf`: `prachibarpete640@gmail.com`, `+91-8767739953`. |
+| **Verify Email** | `Verified` | Verified against resume: `prachibarpete640@gmail.com`. |
